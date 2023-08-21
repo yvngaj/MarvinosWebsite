@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvin's School Info</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      #school-container {
+        max-width: 600px;
+        width: 100%;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+        margin: 100px auto;
+        opacity: 1;
+        animation: fade-in 2s forwards;
+      }
+      h1 {
+        color: #343a40;
+        font-weight: 600;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #6c757d;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+      }
+      .info-box {
+        background-color: #f8f9fa;
+        border: 2px solid #ced4da;
+        border-radius: 15px;
+        padding: 20px;
+        margin-top: 30px;
+        opacity: 0;
+        animation: fade-in-scroll 2s forwards;
+      }
+      h2 {
+        color: #343a40;
+        font-weight: 600;
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+      #section-with-containers {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+        background-color: #f0f0f0;
+        opacity: 0;
+        animation: fade-in-scroll 2s forwards;
+        position: relative;
+        height: 100vh;
+      }
+      .portrait-container {
+        width: 240px;
+        height: 380px;
+        margin: 20px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        animation: fade-in 2s forwards;
+      }
+      .portrait {
+        width: 180px;
+        height: 300px;
+        background-image: url('C:\Users\DELL\Desktop\Marvi\fun\Profile Pic.jpg');
+        background-size: cover;
+        border-radius: 10px;
+      }
+      .container-text {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      @keyframes fade-in {
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fade-in-scroll {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+</head>
+<body>
+  <div id="school-container">
+    <h1>Marvin's School Journey</h1>
+    <p>Exploring memorable moments from my school days:</p>
+    <div class="info-box">
+      <h2>German International School</h2>
+      <p>Although not the top-tier school, the German International School holds a special place in my heart. The bonds I formed and the unforgettable memories I created remain cherished.</p>
+    </div>
+    <div class="info-box">
+      <h2>Favorite Subjects</h2>
+      <p>English and P.E. (Sports) were my go-to subjects. Group projects weren't my favorite due to diverse opinions among classmates.</p>
+    </div>
+    <div class="info-box">
+      <h2>School Link</h2>
+      <p>https://www.dssharjah.org/</p>
+    </div>
+  </div>
+
+  <div id="hobbies-section" style="text-align: center; margin-top: 200px;">
+    <h1>Marvin's Hobbies</h1>
+    <div id="section-with-containers" style="display: flex; justify-content: center; align-items: center; padding: 50px 0; background-color: #f0f0f0; opacity: 0; animation: fade-in-scroll 2s forwards; position: relative; height: 100vh;">
+      <div class="portrait-container" style="margin-top: 0;"> <!-- Adjusted margin-top value -->
+        <div class="portrait"></div>
+      </div>
+      <div class="portrait-container" style="margin-top: 40px;"> <!-- Adjusted margin-top value -->
+        <div class="portrait"></div>
+      </div>
+      <div class="portrait-container" style="margin-top: 80px;"> <!-- Adjusted margin-top value -->
+        <div class="portrait"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const schoolContainer = document.getElementById('school-container');
+    const infoBoxes = document.querySelectorAll('.info-box');
+    const sectionWithContainers = document.getElementById('section-with-containers');
+    const windowHeight = window.innerHeight;
+
+    window.addEventListener('scroll', () => {
+      const containerBottom = schoolContainer.getBoundingClientRect().bottom;
+
+      if (containerBottom < windowHeight) {
+        infoBoxes.forEach((box, index) => {
+          setTimeout(() => {
+            box.style.opacity = 1;
+          }, index * 500);
+        });
+      }
+
+      const sectionTop = sectionWithContainers.getBoundingClientRect().top;
+      if (sectionTop < windowHeight) {
+        sectionWithContainers.style.opacity = 1;
+      }
+    });
+  </script>
+</body>
+</html>

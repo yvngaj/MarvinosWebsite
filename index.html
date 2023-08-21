@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvin's Life Journey</title>
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  #container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  h1 {
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  p {
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  #show-school-info {
+    background-color: #f8f9fa;
+    color: #333333;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  #show-school-info:hover {
+    background-color: #e9ecef;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+<div id="container">
+  <h1>Marvin Soliman</h1>
+  <p>Welcome to my Page! Here's a small description about me. My name is Marvin Soliman and I was born in Austria, Vienna. I grew up in UAE and have a lot of memories there. I went to the German International Private School for 10 Years. I enjoyed playing with my friends througout Elementary School. I would like to either become a prorammer or an aviation Pilot. If Flightschool doesn't work out then I'll stick to being a Coder/Programmer!<p>
+  <p>
+    Press the Button below to view more information regarding my Childhood school.
+  </p>
+  <button id="show-school-info">Explore UAE School Info</button>
+</div>
+<script>
+  const showSchoolInfoButton = document.getElementById('show-school-info');
+  const container = document.getElementById('container');
+
+  showSchoolInfoButton.addEventListener('click', () => {
+    container.style.transform = "scale(0.8)";
+    container.style.opacity = 0;
+    setTimeout(() => {
+      window.location.href = 'uae_school_info.html'; // Redirect to the UAE School Info page
+    }, 500); // Delay before redirecting (in milliseconds)
+  });
+</script>
+</body>
+</html>
